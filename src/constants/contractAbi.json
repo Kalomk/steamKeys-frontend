@@ -1,0 +1,135 @@
+[
+  {
+    "type": "constructor",
+    "stateMutability": "payable",
+    "payable": true,
+    "inputs": [{ "type": "uint256", "name": "minEntranceFee" }]
+  },
+  { "type": "error", "name": "Dashboard__NotEnoughETHToAddPost", "inputs": [] },
+  { "type": "error", "name": "Dashboard__NotEnoughETHToBuyItemFromThePost", "inputs": [] },
+  { "type": "error", "name": "Dashboard__NotItemExist", "inputs": [] },
+  {
+    "type": "event",
+    "anonymous": false,
+    "name": "ItemAdded",
+    "inputs": [
+      { "type": "address", "name": "sender", "indexed": true },
+      { "type": "string", "name": "description", "indexed": false },
+      { "type": "string", "name": "title", "indexed": false },
+      { "type": "uint256", "name": "price", "indexed": false },
+      { "type": "uint256", "name": "id", "indexed": false },
+      { "type": "bool", "name": "isPrior", "indexed": false },
+      { "type": "string", "name": "image", "indexed": false }
+    ]
+  },
+  {
+    "type": "event",
+    "anonymous": false,
+    "name": "ItemBuyed",
+    "inputs": [
+      { "type": "address", "name": "buyer", "indexed": true },
+      { "type": "uint256", "name": "id", "indexed": false },
+      { "type": "uint256", "name": "price", "indexed": false }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "BuyItemFromThePost",
+    "constant": false,
+    "stateMutability": "payable",
+    "payable": true,
+    "inputs": [{ "type": "uint256", "name": "postId" }],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "addPost",
+    "constant": false,
+    "stateMutability": "payable",
+    "payable": true,
+    "inputs": [
+      { "type": "string", "name": "_description" },
+      { "type": "string", "name": "_title" },
+      { "type": "string", "name": "_image", "internalType": "string" },
+      { "type": "uint256", "name": "_price" },
+      { "type": "bool", "name": "_checkInput" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "base64Prefix",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [],
+    "outputs": [{ "type": "string" }]
+  },
+  {
+    "type": "function",
+    "name": "getMinEntranceFee",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [],
+    "outputs": [{ "type": "uint256" }]
+  },
+  {
+    "type": "function",
+    "name": "getPost",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [{ "type": "uint256", "name": "id" }],
+    "outputs": [
+      {
+        "type": "tuple",
+        "components": [
+          { "type": "address", "name": "sender" },
+          { "type": "string", "name": "description" },
+          { "type": "string", "name": "title" },
+          { "type": "uint256", "name": "price" },
+          { "type": "uint256", "name": "id" },
+          { "type": "string", "name": "image" },
+          { "type": "bool", "name": "isPrior" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getPostIds",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [],
+    "outputs": [{ "type": "uint256[]" }]
+  },
+  {
+    "type": "function",
+    "name": "getTotalPosts",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [],
+    "outputs": [{ "type": "uint256", "internalType": "uint256", "name": "" }]
+  },
+  {
+    "type": "function",
+    "name": "postIds",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [{ "type": "uint256" }],
+    "outputs": [{ "type": "uint256" }]
+  },
+  {
+    "type": "function",
+    "name": "totalPosts",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [],
+    "outputs": [{ "type": "uint256" }]
+  }
+]
