@@ -1,4 +1,7 @@
 import { connect } from 'mongoose';
+import getConfig from 'next/config';
+
+const { serverRuntimeConfig } = getConfig();
 
 export async function connectToDatabase() {
   const uri =
@@ -6,6 +9,7 @@ export async function connectToDatabase() {
   try {
     await connect(uri);
     console.log('Connected to MongoDB');
+    console.log(uri);
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
   }

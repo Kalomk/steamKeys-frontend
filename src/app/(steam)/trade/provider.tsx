@@ -11,13 +11,13 @@ import { getDefaultWallets, RainbowKitProvider, darkTheme } from '@rainbow-me/ra
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: 'http://localhost:4000/graphql',
+  uri: process.env.NEXT_PUBLIC_APOLO_CL!,
 });
 const { chains, publicClient } = configureChains(
   [sepolia, goerli],
   [
     infuraProvider({
-      apiKey: '152b456aa5d44ab3a7a18b287dfc9295',
+      apiKey: process.env.NEXT_PUBLIC_INFURA_API!,
     }),
     jsonRpcProvider({
       rpc: () => ({ http: 'HTTP://127.0.0.1:7545' }),
